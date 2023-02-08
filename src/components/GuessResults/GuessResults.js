@@ -2,10 +2,9 @@ import React from 'react'
 import Guess from '../Guess/Guess'
 import { range } from '../../utils'
 
-function GuessResults({ guesses, numOfGuesses }) {
+function GuessResults({ guesses, numOfGuesses, answer }) {
 	const emptyGuesses = range(numOfGuesses - guesses.length)
 	const guessesGrid = [...guesses, ...emptyGuesses]
-	console.log({ guessesGrid })
 	const blankCharacters = '     '
 
 	return (
@@ -13,6 +12,7 @@ function GuessResults({ guesses, numOfGuesses }) {
 			{guessesGrid.map((guess, index) => (
 				<Guess
 					guess={typeof guess === 'string' ? guess : blankCharacters}
+					answer={answer}
 					key={index}
 				/>
 			))}

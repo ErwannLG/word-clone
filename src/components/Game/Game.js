@@ -21,7 +21,11 @@ function Game() {
 
 	return (
 		<>
-			<GuessResults guesses={guesses} numOfGuesses={NUM_OF_GUESSES_ALLOWED} />
+			<GuessResults
+				guesses={guesses}
+				numOfGuesses={NUM_OF_GUESSES_ALLOWED}
+				answer={answer}
+			/>
 			<GuessInput handleAddGuess={handleAddGuess} />
 		</>
 	)
