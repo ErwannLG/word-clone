@@ -6,6 +6,11 @@ function GuessInput({ handleAddGuess }) {
 	function handleSubmit(event) {
 		event.preventDefault()
 
+		if (newGuess.length < 5) {
+			window.alert('You must enter 5 characters')
+			return
+		}
+
 		handleAddGuess(newGuess)
 		setNewGuess('')
 	}
