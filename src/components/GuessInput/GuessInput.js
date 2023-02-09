@@ -6,7 +6,7 @@ function GuessInput({ handleAddGuess }) {
 	function handleSubmit(event) {
 		event.preventDefault()
 
-		if (newGuess.length < 5) {
+		if (newGuess.length !== 5) {
 			window.alert('You must enter 5 characters')
 			return
 		}
@@ -22,9 +22,9 @@ function GuessInput({ handleAddGuess }) {
 				id='guess-input'
 				type='text'
 				required
-				minLength='5'
-				maxLength='5'
-				size='5'
+				pattern='[a-zA-Z]{5}'
+				title='5 letter word'
+				size={5}
 				onChange={(event) => setNewGuess(event.target.value.toUpperCase())}
 				value={newGuess}
 			/>
