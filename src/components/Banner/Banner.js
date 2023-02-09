@@ -5,7 +5,7 @@ function Banner({ status, numOfAttempts, answer, resetGame }) {
 	console.log(answer)
 
 	return (
-		<button onClick={resetGame} className={`${mood} banner`}>
+		<div className={`${mood} banner`}>
 			{status ? (
 				<p>
 					<strong>Congratulations!</strong> Got it in
@@ -16,7 +16,10 @@ function Banner({ status, numOfAttempts, answer, resetGame }) {
 					Sorry, the correct answer is <strong>{answer}</strong>.
 				</p>
 			)}
-		</button>
+			<button onClick={resetGame} className='restart-button'>
+				Restart Game
+			</button>
+		</div>
 	)
 }
 
