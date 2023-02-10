@@ -9,7 +9,10 @@ function Banner({ status, numOfAttempts, answer, resetGame }) {
 			{status ? (
 				<p>
 					<strong>Congratulations!</strong> Got it in
-					<strong>{numOfAttempts} guesses</strong>.
+					<strong>
+						{numOfAttempts === 1 ? '1 guess' : `${numOfAttempts} guesses`}
+					</strong>
+					.
 				</p>
 			) : (
 				<p>
